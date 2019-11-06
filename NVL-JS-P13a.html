@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Hola Mundo</title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript"> 
+    var n = 10;
+    
+    function getPrimos(n) {
+      var numerosPrimos = [];
+        for (var j = 2; numerosPrimos.length < n; j++) {
+          if (esPrimo(j)) {
+            numerosPrimos.push(j);
+          }
+        }
+      alert("Números primos: " + numerosPrimos);
+      console.log(numerosPrimos);
+    }
+    
+    function esPrimo(numero){
+      for (var i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+          return false;
+        }
+      }
+      return numero !== 1;
+    }
+
+    getPrimos(n);
+  </script>
+  </html>
