@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang='es-ES'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Hola Mundo</title>
+  </head>
+  <body>
+    <div id="divLista">
+      
+    </div>
+  </body>
+  <script type='text/javascript'> 
+    var pelis = [
+      {
+        'Nombre': 'El señor de los anillos',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Regreso al Futuro',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Los increibles 2',
+        'Genero': 'Animación'
+      },
+    {
+        'Nombre': 'Un ciudadano ejemplar',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'El señor de los anillos las dos torres',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Toy Story',
+        'Genero': 'Animación'
+      },
+    {
+        'Nombre': 'Como entrenar a tu dragón',
+        'Genero': 'Animación'
+      },
+    {
+        'Nombre': 'Los vengadores',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Star wars',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Jurassic park',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Toy story 2',
+        'Genero': 'Animación'
+      },
+    {
+        'Nombre': 'Intocable',
+        'Genero': 'Drama'
+      }, 
+    {
+        'Nombre': 'Como entrenar a tu dragón 2',
+        'Genero': 'Animación'
+      }, 
+    {
+        'Nombre': 'Transpoting',
+        'Genero': 'Drama'
+      }, 
+    {
+        'Nombre': '8 Millas',
+        'Genero': 'Drama'
+      },
+    {
+        'Nombre': 'El señor de los anillos el retorno del rey',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Spiderman',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Solo en casa',
+        'Genero': 'Comedia'
+      },
+    {
+        'Nombre': 'Ocho apellidos vascos',
+        'Genero': 'Comedia'
+      },
+    {
+        'Nombre': 'Celda 211',
+        'Genero': 'Acción'
+      },
+    {
+        'Nombre': 'Expediente Warren',
+        'Genero': 'Terror'
+      },
+    {
+        'Nombre': 'Paranormal activity',
+        'Genero': 'Terror'
+      },
+    {
+        'Nombre': 'Shrek',
+        'Genero': 'Animación'
+      }                                                                
+    ];
+
+  var divObjetivo = document.querySelector('#divLista');
+  var ul = document.createElement('ul');
+  divObjetivo.appendChild(ul); 
+
+   for(i in pelis){
+        var lista = document.querySelector('ul');
+        var li = document.createElement('li');
+        li.textContent = pelis[i].Nombre;
+        lista.appendChild(li);
+        
+        var img =document.createElement('img');
+          img.setAttribute("width", "40");
+          img.setAttribute("height", "40");
+        
+        if(pelis[i].Genero == "Acción"){
+          img.src = "https://image.flaticon.com/icons/png/512/1139/1139483.png";
+        }else if(pelis[i].Genero == "Drama"){
+          img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw7u9JuSph6YUBjIKaynH8-iT97KLstX1420jkPsMYdKmnGDdM&s";
+        }else if(pelis[i].Genero == "Comedia"){
+          img.src = "https://image.flaticon.com/icons/png/512/625/625686.png";
+        }else{
+          img.src = "data:image/png;base64,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";
+        }
+        li.appendChild(img);
+      console.log("La peli " + pelis[i].Nombre + " es de género " + pelis[i].Genero)
+   }
+
+  </script>
+  </html>
